@@ -52,16 +52,15 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Calling a Spade a Heart: Gaslighting Multimodal Large Language Models via Negation</h1>
+            <h1 class="title is-1 publication-title">Benchmarking Gaslighting Negation Attacks Against Multimodal Large Language Models</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
                 <a href="https://binzhubz.github.io/" target="_blank">Bin Zhu</a><sup>1</sup><sup> *</sup>,</span>
                 <span class="author-block">
-                    <a href="https://orcid.org/0009-0002-7591-6016" target="_blank">Huiyan Qi</a><sup>2</sup><sup> *</sup>,</span>
+                    <a href="https://orcid.org/0009-0004-9345-3275" target="_blank">Yinxuan Gui</a><sup>1</sup><sup> *</sup>,</span>
                     <span class="author-block">
-
-                        <a href="https://orcid.org/0009-0004-9345-3275" target="_blank">Yinxuan Gui</a><sup>1,2</sup><sup> *</sup>,</span>
+                        <a href="https://orcid.org/0009-0002-7591-6016" target="_blank">Huiyan Qi</a><sup>1</sup><sup> *</sup>,</span>
                         <span class="author-block">
                           <a href="https://fvl.fudan.edu.cn/people/jingjingchen/" target="_blank">Jingjing Chen</a><sup>2</sup></sup>,</span>
                           <span class="author-block">
@@ -80,7 +79,7 @@
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/abs/2501.19017" target="_blank"
+                        <a href="" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -162,7 +161,7 @@ someone into questioning their own perception of reality." - Wikipedia.
             <img src="static/images/example-2.png" alt="Detailed Image ROCAUC" />
           </div>
         </div>
-        <div class="item blend-img-item">
+        <!-- <div class="item blend-img-item">
           <div class="image-wrapper">
             <img src="static/images/example-3.png" alt="Detailed Pixel-wise ROCAUC" />
           </div>
@@ -171,14 +170,12 @@ someone into questioning their own perception of reality." - Wikipedia.
           <div class="image-wrapper">
             <img src="static/images/example-4.png" alt="Detailed Pixel-wise ROCAUC" />
           </div>
-        </div>
+        </div> -->
       </div>
       <p class="description">
-Examples demonstrate that GPT-4o initially provides correct answers but incorrectly revises
-its responses when confronted with user-provided negation arguments. GPT-4o shows a tendency to
-accept misleading inputs, often generating hallucinated explanations to justify the revised answers, a
-behavior that can be described as a form of “gaslighting". Note: "Gaslighting is the manipulation of
-someone into questioning their own perception of reality." - Wikipedia.
+        Examples demonstrate that GPT-5 initially provides correct answers but incorrectly revises its responses when confronted with user-provided negation arguments. 
+        GPT-5 shows a tendency to accept misleading inputs, often generating hallucinated explanations to justify the revised answers, a behavior that can be described as a form of ``gaslighting". 
+        Note: "Gaslighting is the manipulation of someone into questioning their own perception of reality." - Wikipedia.
       </p>
     </div>
   </div>
@@ -248,7 +245,11 @@ someone into questioning their own perception of reality." - Wikipedia.
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Multimodal Large Language Models (MLLMs) have achieved remarkable progress in understanding and generating language grounded in multimodal contexts, such as visual and textual inputs. These models leverage cutting-edge advancements in Large Language Models (LLM) and multimodal learning, enabling them to excel in diverse tasks, such as image understanding, visual question answering, and multimodal reasoning. Recent breakthroughs, such as the introduction of proprietary models GPT-4o and Claude-3.5-Sonnet, have demonstrated exceptional performance, establishing new standards in multimodal understanding and reasoning. Additionally, open-source models like DeepSeek-V3, DeepSeek-R1 and Qwen series are closing the performance gap with proprietary models, reflecting the rapid and competitive evolution of MLLMs. These advancements not only highlight the growing capabilities of LLMs, but also suggest that the development trajectory is edging closer to achieving Artificial General Intelligence (AGI).
+          Multimodal Large Language Models (MLLMs) have exhibited remarkable advancements in integrating different modalities, excelling in complex understanding and generation tasks. Despite their success, <strong>MLLMs remain vulnerable to conversational adversarial inputs.</strong>
+          In this paper, we systematically study gaslighting negation attacks—a phenomenon where models, despite initially providing correct answers, are persuaded by user-provided negations to reverse their outputs, often <strong>fabricating justifications</strong>. 
+          We conduct <strong>extensive evaluations of state-of-the-art MLLMs</strong> across diverse benchmarks and observe substantial performance drops when negation is introduced. Notably, we introduce the <strong>first benchmark GaslightingBench</strong>, specifically designed to evaluate the vulnerability of MLLMs to negation arguments. 
+          GaslightingBench consists of multiple-choice questions curated from existing datasets, along with generated negation prompts across 20 diverse categories. Throughout extensive evaluation, we find that proprietary models such as Gemini-1.5-flash and GPT-4o demonstrate better resilience compared to open-source counterparts 
+          like Qwen2-VL and LLaVA, though even advanced reasoning-oriented models like <strong>Gemini-2.5-Pro remain susceptible</strong>. Our category-level analysis further shows that subjective or socially nuanced domains (e.g., Social Relation, Image Emotion) are especially fragile, while more objective domains (e.g., Geography) exhibit relatively smaller but still notable drops. Overall, all evaluated MLLMs struggle to maintain logical consistency under gaslighting negation attack. These findings highlight a fundamental robustness gap and provide insights for developing more reliable and trustworthy multimodal AI systems.
           </p>
           <img src="static/images/statistic.png" alt="Poster Dataset Distillation (PoDD)" class="center-image" />
           <p style="font-size: 14px;">Comparison of MLLMs's performance before (i.e., initial answers) and after negation, reported as average accuracy across eight benchmarks-MME, MMMU, MMMUPro, MMBench, PoPE, ChartQA, AI2Diagram and MathVista. The results highlight the substantial accuracy drop across all models when negation is introduced. 
@@ -389,10 +390,48 @@ However, when users introduce negation arguments, many models revise their answe
 </section>
 
 
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container  is-max-desktop">
+      <h2 class="title is-3">Interesting Discussion</h2>
+      <div class="level-set has-text-justified">
+        <p>
+          <i><strong>Effect of negation types.</strong></i> We incorporated two additional variants into GaslightingBench: <b>(i) anger-style negation</b>, where the user conveys emotionally charged disbelief (e.g., “I
+        can’t believe you made such a basic mistake!”), and <b>(ii) authority-style negation</b>, where the user
+        appeals to an external authority (e.g., “The professor said your answer is incorrect.”). As shown
+        in following table, we observed a larger performance decline compared to neutral negation. This indicates
+        that emotionally or authoritatively framed challenges can further erode model reliability, likely by
+        amplifying the model's deference to perceived user authority.
+        </p>
+        <!-- <br> -->
+       <img src="static/images/discussion-1.png" alt="Global Semantics" class="blend-img-background center-image"/>
+      <br>
+      <br>
+      
+        <p>
+          <i><strong>Model confidence under gaslighting negation attacks.</strong></i> To better understand the internal behavior
+          of MLLMs under gaslighting negation attacks, as shown in following table, we conduct a confidence-based analysis using model-reported probability scores for Gemini-1.5-flash and Qwen-2-VL-7B on both
+GaslightingBench and MMMU. We group predictions by their correctness and whether they oc-
+curred before or after negation, then compute the average confidence scores. On the one hand, for
+both models, confidence scores are generally higher for correct predictions than for incorrect ones,
+especially after negation, indicating some degree of internal calibration. On the other hand, we ob-
+serve confidence drop in incorrect answers after negation, particularly in Qwen-2-VL-7B (from 90.6
+to 74.4 on GaslightingBench), suggesting the model becomes less confident when misled. However,
+confidence in incorrect responses remains relatively high, especially in Gemini-1.5-flash, which
+maintains 91.9 average confidence even when wrong after negation, indicating a risk of confident
+hallucination. These findings indicate that while models may exhibit partial uncertainty when ma-
+nipulated, they can still produce incorrect yet high-confidence outputs. This suggests the need for
+calibrated uncertainty modeling in MLLMs under adversarial dialogue settings.
+        </p>
+        <!-- <br> -->
+       <img src="static/images/discussion-2.png" alt="Global Semantics" class="blend-img-background center-image"/> 
+      </div>
+ </div>
+</section>
 
 
 <!--BibTex citation -->
-  <section class="section" id="BibTeX">
+  <!-- <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>@article{zhu2025calling,
@@ -402,7 +441,7 @@ However, when users introduce negation arguments, many models revise their answe
   year={2025}
 }</code></pre>
     </div>
-</section>
+</section> -->
 <!--End BibTex citation -->
 
 
